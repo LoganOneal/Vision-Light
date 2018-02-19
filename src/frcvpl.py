@@ -158,7 +158,7 @@ class FindContours(vpl.VPL):
         
         cnts = cv2.findContours(image, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)[-2]
         center = None
-
+        height, width, channels = image.shape
         data[self["key"]] = []
 
         # only proceed if at least one contour was found
@@ -173,7 +173,7 @@ class FindContours(vpl.VPL):
             M = cv2.moments(c)
             center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
             # only proceed if the radius meets a minimum size
-            if (radius > 10):
+            if (radius > width/30):
                 data[self["key"]] += [[center, radius]]
                 """
                 # draw the circle and centroid on the frame,
