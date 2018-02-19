@@ -303,7 +303,8 @@ class DrawMeter(vpl.VPL):
 
 class ShowGameInfo(vpl.VPL):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+            super().__init__(**kwargs)
             self.firstScroll = 0
             self.secondScroll = -400
 
