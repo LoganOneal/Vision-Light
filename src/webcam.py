@@ -81,7 +81,7 @@ pipe.add_vpl(frcvpl.FindContours(key="contours"))
 pipe.add_vpl(frcvpl.RestoreImage(key="normal"))
 
 #Convert back to BGR
-pipe.add_vpl(frcvpl.ConvertColor(conversion=cv2.COLOR_HSV2BGR))
+#pipe.add_vpl(frcvpl.ConvertColor(conversion=cv2.COLOR_HSV2BGR))
 
 #Draws dot on center point of convex hull
 pipe.add_vpl(frcvpl.DrawContours(key="contours"))
