@@ -85,6 +85,7 @@ pipe.add_vpl(frcvpl.RestoreImage(key="normal"))
 
 #Draws dot on center point of convex hull
 pipe.add_vpl(frcvpl.DrawContours(key="contours"))
+pipe.add_vpl(frcvpl.Distance(key="contours"))
 
 #Draws meter to tell how close to center
 pipe.add_vpl(frcvpl.DrawMeter(key="contours"))
